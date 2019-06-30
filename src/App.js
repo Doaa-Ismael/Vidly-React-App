@@ -6,7 +6,6 @@ import Movies from './components/movies';
 function App() {
   return (
     <main className="container">
-      Hello
     <Movies></Movies>
     </main>  
   );

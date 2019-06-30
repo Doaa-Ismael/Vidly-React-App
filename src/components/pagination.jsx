@@ -4,12 +4,9 @@ import PropTypes from 'prop-types';
 class Pagination extends Component {
 
     render() {
-        let { itemsCount, pageSize, currentPage, onPageChange } = this.props;
-        let numberOfPages = (itemsCount / pageSize) | 0;
-        numberOfPages += (itemsCount / pageSize) == 0 ? 0 : 1;
-        if (numberOfPages == 1)
-            return 0;
-        console.log(currentPage)
+        let { currentPage, onPageChange, pageSize, count } = this.props;
+        let numberOfPages = Math.ceil(count/pageSize);
+        if(numberOfPages == 1 ) return null;
         return (
             <nav>
                 <ul className="pagination">
@@ -25,11 +22,11 @@ class Pagination extends Component {
     }
 
 }
-// Pagination.PropTypes = {
-//     itemsCount: PropTypes.number.isRequired, 
-//     pageSize: PropTypes.number.isRequired, 
-//     currentPage: PropTypes.number.isRequired, 
-//     onPageChange: PropTypes.func.isRequired
-// }
+Pagination.propTypes = {
+    count: PropTypes.number.isRequired, 
+    pageSize: PropTypes.number.isRequired, 
+    currentPage: PropTypes.number.isRequired, 
+    onPageChange: PropTypes.func.isRequired
+}
 export default Pagination;
 
