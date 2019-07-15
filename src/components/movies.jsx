@@ -46,7 +46,7 @@ class Movies extends Component {
                         </ul>
                     </div>
                 </div>
-                <div className="col-col-9">
+                <div className="col">
 
                     <div>Showing {moviesCount} movies in the database</div>
                     <MoviesTable 
